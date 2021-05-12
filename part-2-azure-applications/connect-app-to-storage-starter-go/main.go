@@ -14,8 +14,8 @@ import (
 func main() {
 	config := NewConfig()
 
-	imageSourceUrl, err := url.Parse("https://"+ config.blobAccount  + ".blob.core.windows.net/" +
-		config.blobContainer  + "/")
+	imageSourceUrl, err := url.Parse("https://" + config.blobAccount + ".blob.core.windows.net/" +
+		config.blobContainer + "/")
 	if err != nil {
 		log.Fatalf("Invalid image source URL | %v", err)
 	}
@@ -30,7 +30,7 @@ func main() {
 
 	fmt.Println(imageSourceUrl)
 
-	serverErr := http.ListenAndServe(":"+strconv.Itoa(5555), r)
+	serverErr := http.ListenAndServe(":"+strconv.Itoa(config.port), r)
 
 	if serverErr != nil {
 		log.Fatalf("server failed: %v", serverErr)

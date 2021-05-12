@@ -19,6 +19,7 @@ type Config struct {
 	blobAccount                  string
 	blobStorageKey               string
 	blobContainer                string
+	port						 int
 }
 
 func NewConfig() Config {
@@ -32,6 +33,7 @@ func NewConfig() Config {
 		blobAccount:                  os.Getenv("BLOB_ACCOUNT"),
 		blobContainer:                os.Getenv("BLOB_CONTAINER"),
 		blobStorageKey:               os.Getenv("BLOB_STORAGE_KEY"),
+		port:                         5555,
 	}
 
 	var err error
